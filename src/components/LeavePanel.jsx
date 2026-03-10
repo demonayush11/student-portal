@@ -11,7 +11,7 @@ const LeavePanel = ({ student, leaveRequest }) => {
     const handleEvaluate = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://127.0.0.1:8001/classify', {
+            const response = await fetch('http://localhost:8001/classify', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

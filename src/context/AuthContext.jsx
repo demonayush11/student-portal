@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext(null);
 
-const API_BASE = 'http://127.0.0.1:8001';
+const API_BASE = 'http://localhost:8001';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
 
         try {
             console.log("Attempting login for:", username);
-            const response = await fetch('http://127.0.0.1:8001/token', {
+            const response = await fetch(`${API_BASE}/token`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
